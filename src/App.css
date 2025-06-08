@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid #1a1a1a;
+}
+
+/* HERO SECTION */
+.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.overlay {
+  padding: 60px 20px;
+  width: 100%;
+}
+
+/* === SORTIFY LOGO === */
+.sortify-logo {
+  font-size: 4rem;
+  font-family: Impact, sans-serif;
+  color: #ccff66;
+  transition: all 0.3s ease;
+}
+
+.sortify-logo:hover {
+  background-color: #e1fea4;
+  color: #102b22;
+  padding: 0.2em 0.6em;
+  box-shadow: 0 0 0 6px #e1fea4;
+  border-radius: 4px;
+}
+
+/* === PARAGRAF & BUTTON === */
+.overlay p {
+  font-size: 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.overlay button {
+  margin-top: 2.5rem;
+  padding: 14px 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #001f1f;
+  background-color: #ccff66;
+  border: 2px solid #ccff66;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.overlay button:hover {
+  background-color: transparent;
+  color: #ccff66;
+}
+
+/* === EDUCATION SECTION === */
+.education-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 3rem;
+  background-color: #f9f9f9;
+  flex-wrap: wrap;
+}
+
+.education-content {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+}
+
+.education-content h2 {
+  font-size: 2.5rem;
+  color: #102b22;
+  background-color: #ccff66;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  box-shadow: 4px 4px #102b22;
+}
+
+.education-content p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+.btn-edu {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #ccff66;
+  color: #001f1f;
+  border: 2px solid #ccff66;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edu:hover {
+  background-color: transparent;
+  color: #ccff66;
+}
+
+.education-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.education-image img {
+  max-width: 100%;
+  height: auto;
+}
