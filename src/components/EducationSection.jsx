@@ -1,8 +1,14 @@
-// src/components/EducationSection.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import edukasiImage from '../images/edukasi.png';
 
 export default function EducationSection() {
+  const navigate = useNavigate(); // Inisialisasi navigate
+
+  const handleMoreDetails = () => {
+    navigate('/more-details'); // Mengarahkan ke halaman MoreDetailsPage
+  };
+
   return (
     <section className="education-section">
       <div className="education-content">
@@ -27,7 +33,7 @@ export default function EducationSection() {
           <strong> Tolak, Kurangi, Gunakan Kembali, Daur Ulang,</strong> dan <strong>Kompos</strong>.
           Temukan tips mudah untuk mengurangi dampak lingkungan Anda!
         </p>
-        <button className="btn-edu">Lebih Lanjut <span>»</span></button>
+        <button className="btn-edu" onClick={handleMoreDetails}>Lebih Lanjut <span>»</span></button>
       </div>
       <div className="education-image">
         <img src={edukasiImage} alt="Ilustrasi edukasi sampah" />
