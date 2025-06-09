@@ -48,6 +48,55 @@ body {
   text-decoration: underline;
 }
 
+/* === RESPONSIVE NAVBAR === */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 1rem 0;
+  }
+}
+
+/* Hamburger menu */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-icon-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+}
+
 /* === HERO SECTION === */
 .hero {
   background-size: cover;
@@ -258,7 +307,7 @@ footer {
   color: white;
   padding: 2rem 3rem;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 3rem; /* Untuk memberi jarak antara footer dan konten */
 }
 
 .footer-content {
@@ -290,4 +339,15 @@ footer {
 
 .footer-links a:hover {
   color: #ccff66;
+}
+
+/* Pastikan halaman memiliki margin bawah cukup untuk footer */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
