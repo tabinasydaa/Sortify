@@ -1,11 +1,19 @@
-import React from 'react';
+import React from "react";
+import "./MoreDetailsPage.css";
+
+import botol from "../images/botol.png";
+import kantong from "../images/kantong.png";
+import benar from "../images/benar.png";
+import salah from "../images/salah.png";
 
 export default function MoreDetailsPage() {
   return (
     <div className="more-details-container">
       <h1>100 Tips to Get to Zero</h1>
-      <p>Zero Waste adalah gaya hidup yang bertujuan untuk mengurangi produk sampah hingga mendekati nol.</p>
-      
+      <p>
+        Zero Waste adalah gaya hidup yang bertujuan untuk mengurangi produksi sampah hingga mendekati nol.
+      </p>
+
       <div className="tip-category">
         <div>Rumah</div>
         <div>Kamar Mandi</div>
@@ -14,27 +22,47 @@ export default function MoreDetailsPage() {
         <div>Kebun</div>
       </div>
 
-      <div className="tip-section">
-        <h2>Rumah</h2>
-        <div className="tip-item">
-          <h3>1. Botol Plastik + Botol Isi Ulang</h3>
-          <p>Botol sekali pakai memberikan sampah plastik. Gunakan botol minum yang bisa diisi ulang agar lebih ramah lingkungan dan hemat.</p>
-          <div className="icons-container">
-            <div className="checkmark"></div>
-            <img src="icon_check.png" alt="Checkmark" />
+      {/* Scrollable Section */}
+      <div className="scroll-wrapper">
+        <div className="tip-section">
+          {/* Tip 1 */}
+          <div className="tip-card">
+            <h3>1. Botol Plastik &gt; Botol Isi Ulang</h3>
+            <p>
+              Botol sekali pakai menambah sampah plastik. Gunakan botol minum yang bisa diisi ulang agar lebih ramah lingkungan dan hemat.
+            </p>
+            <div className="visual-comparison">
+              <div>
+                <img src={botol} alt="Botol Plastik" />
+                <img className="icon" src={salah} alt="Salah" />
+              </div>
+              <div>
+                <img src={botol} alt="Botol Isi Ulang" />
+                <img className="icon" src={benar} alt="Benar" />
+              </div>
+            </div>
           </div>
-        </div>
 
-        <div className="tip-item">
-          <h3>2. Gunakan Kantong Belanja Kain</h3>
-          <p>Saat berbelanja, bawa tas kain sendiri agar tidak menggunakan kantong plastik sekali pakai yang sulit terurai dan berbahaya bagi lingkungan.</p>
-          <div className="icons-container">
-            <div className="crossmark"></div>
-            <img src="icon_cross.png" alt="Crossmark" />
+          {/* Tip 2 */}
+          <div className="tip-card">
+            <h3>2. Gunakan Kantong Belanja Kain</h3>
+            <p>
+              Saat belanja, bawa tas kain sendiri agar tidak perlu kantong plastik. Tas kain bisa dipakai berkali-kali dan tidak mencemari lingkungan.
+            </p>
+            <div className="visual-comparison">
+              <div>
+                <img src={kantong} alt="Kantong Plastik" />
+                <img className="icon" src={salah} alt="Salah" />
+              </div>
+              <div>
+                <img src={kantong} alt="Tas Kain" />
+                <img className="icon" src={benar} alt="Benar" />
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Tambahkan lebih banyak tips sesuai kebutuhan */}
+          {/* Tambahkan lebih banyak tip-card di sini jika perlu */}
+        </div>
       </div>
     </div>
   );
