@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate untuk mengarahkan setelah login
 import './LoginPage.css'; // Pastikan impor file CSS di sini
+import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -69,7 +70,7 @@ export default function LoginPage() {
 
             <button type="submit">Login</button>
           </form>
-          <p>Don't have an account? <a href="#">Register</a></p>
+          <p>Belum punya akun? <Link to="/register">Daftar</Link></p>
         </div>
       </div>
     </div>

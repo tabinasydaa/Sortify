@@ -4,26 +4,28 @@ import EducationSection from './components/EducationSection';
 import MapSection from './components/MapSection';
 import WasteDetectionSection from './components/WasteDetectionSection';
 import LoginPage from './components/LoginPage';
-import Dashboard from './components/Dashboard'; // Mengimpor halaman dashboard
-import MoreDetailsPage from './components/MoreDetailsPage'; // Mengimpor halaman MoreDetailsPage
-import { useState, useEffect } from 'react';
-import { Link, useLocation, Route, Routes } from 'react-router-dom'; // Menggunakan React Router
+import RegisterPage from './components/RegisterPage';  // Import RegisterPage
+import Dashboard from './components/Dashboard';
+import MoreDetailsPage from './components/MoreDetailsPage';
+import { useState } from 'react';
+import { Link, useLocation, Route, Routes } from 'react-router-dom';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation(); // Menggunakan useLocation untuk mendapatkan path yang aktif
+  const location = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const isLoginPage = location.pathname === '/login'; // Cek apakah sedang di halaman login
-  const isMoreDetailsPage = location.pathname === '/more-details'; // Cek apakah sedang di halaman MoreDetailsPage
+  const isLoginPage = location.pathname === '/login';
+  const isRegisterPage = location.pathname === '/register';  // Menambahkan pengecekan untuk halaman register
+  const isMoreDetailsPage = location.pathname === '/more-details';
 
   return (
     <>
-      {/* Navbar hanya ditampilkan jika tidak di halaman login dan MoreDetailsPage */}
-      {!isLoginPage && !isMoreDetailsPage && (
+      {/* Navbar hanya ditampilkan jika tidak di halaman login, register, dan MoreDetailsPage */}
+      {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && (
         <nav className="navbar">
           <div className="logo">
             <img src="/logo.png" alt="Sortify Logo" />
@@ -57,14 +59,15 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/map" element={<MapSection />} />
         <Route path="/education" element={<EducationSection />} />
-        <Route path="/dashboard" element={<Dashboard />} /> {/* Halaman Dashboard */}
-        <Route path="/more-details" element={<MoreDetailsPage />} /> {/* Route untuk MoreDetailsPage */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/more-details" element={<MoreDetailsPage />} />
       </Routes>
 
-      {/* Footer hanya ditampilkan jika tidak di halaman login dan MoreDetailsPage */}
-      {!isLoginPage && !isMoreDetailsPage && (
+      {/* Footer hanya ditampilkan jika tidak di halaman login, register, dan MoreDetailsPage */}
+      {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && (
         <footer>
           <div className="footer-content">
             <p>&copy; 2025 SORTIFY. Semua hak dilindungi.</p>
