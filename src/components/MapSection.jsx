@@ -12,7 +12,7 @@ export default function MapSection() {
             stroke="#102B22"
             strokeWidth="24"
             fill="#E1FEA4"
-            paintOrder="stroke"
+            paintOrder="stroke"z
           >
             PETA SEBARAN SAMPAH DI INDONESIA
           </text>

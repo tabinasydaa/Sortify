@@ -1,0 +1,55 @@
+.detection-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #e2f8c7;  /* Background hijau muda */
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+h2, h3 {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.upload-container {
+  margin: 20px 0;
+}
+
+.file-upload-label {
+  display: inline-block;
+  width: 100%;
+  padding: 20px;
+  border: 2px dashed #1d3d44; /* Garis putus-putus biru */
+  background-color: #1d3d44;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.upload-box {
+  padding: 40px;
+}
+
+.uploaded-image {
+  width: 80%; /* Mengurangi ukuran gambar */
+  max-width: 400px; /* Maksimum lebar 400px */
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.camera-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1d3d44;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.camera-btn:hover {
+  background-color: #15302b;
+}

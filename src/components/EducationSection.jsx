@@ -16,7 +16,7 @@ export default function EducationSection() {
           <svg viewBox="0 0 1000 150" xmlns="http://www.w3.org/2000/svg" className="edu-title-svg-text">
             <text x="0" y="110"
               fontFamily="Impact"
-              fontSize="100"
+              fontSize="80"
               stroke="#102B22"
               strokeWidth="20"
               fill="#E1FEA4"
@@ -33,7 +33,7 @@ export default function EducationSection() {
           <strong> Tolak, Kurangi, Gunakan Kembali, Daur Ulang,</strong> dan <strong>Kompos</strong>.
           Temukan tips mudah untuk mengurangi dampak lingkungan Anda!
         </p>
-        <button className="btn-edu" onClick={handleMoreDetails}>Lebih Lanjut <span>»</span></button>
+        <button className="btn-edu" onClick={handleMoreDetails}>Lebih Lanjut </button>
       </div>
       <div className="education-image">
         <img src={edukasiImage} alt="Ilustrasi edukasi sampah" />
