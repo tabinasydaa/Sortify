@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
   margin: 0;
   padding: 0;
   background-color: #f5f5f5;
@@ -137,7 +137,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 1rem;
-  color: #E1FEA4;
+  color: hsl(79, 98%, 82%);
   background-color: #102B22;
   border: 10px solid #E1FEA4;
   border-radius: 8px;
@@ -146,8 +146,10 @@ body {
 }
 
 .overlay button:hover {
-  background-color: transparent;
+  background-color: #E1FEA4;
   color: #102B22;
+  border-color: #102B22;
+  border-radius: 10px;
 }
 
 /* === SVG TITLE === */
@@ -190,8 +192,8 @@ body {
 }
 
 .btn-edu {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-family: 'Montserrat';
+  font-weight: bold;
   padding: 12px 24px;
   font-size: 1rem;
   background-color: #E1FEA4;
@@ -203,9 +205,10 @@ body {
 }
 
 .btn-edu:hover {
-  background-color: transparent;
+  background-color: #102B22;
   color: #E1FEA4;
   border-color: #102B22;
+  transform: scale(1.05);
 }
 
 .education-image {
@@ -249,56 +252,53 @@ body {
   margin: auto;
   padding: 4rem 3rem;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-container {
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.image-container {
+  width: 80%;
 }
 
 .image-container img {
-  max-width: 50%; 
+  max-width: 32%;
   height: auto;
   border-radius: 8px;
-  margin-right: 30px;
 }
 
-.text-container {
-  flex: 1; 
-  text-align: right; 
-  color: #102B22;
-}
-
-.edu-title-svg-text {
-  width: 100%;
+.edu-title-svg-text-custom {
+  width: 64%;
   height: auto;
-  margin-bottom: 15px;
-}
-
-.text-container h2 {
-  font-family: 'Impact', sans-serif;
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-.text-container h2:first-of-type {
-  font-size: 40px; 
-  font-weight: bold;
 }
 
 .btn-continue {
   color: #102B22;
+  font-family: 'Montserrat';
   background-color: #E1FEA4;
-  border: 10px solid #102B22;
-  border: none;
+  border: 8px solid #102B22;
   padding: 12px 24px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.3s, transform 0.3s;
-  margin-top: 20px; 
+}
+
+.btn-continue:hover {
+  background-color: #102B22;
+  color: #E1FEA4;
+  transform: scale(1.05);
 }
 
 /* === FOOTER === */

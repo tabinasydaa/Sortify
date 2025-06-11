@@ -7,6 +7,8 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';  // Import RegisterPage
 import Dashboard from './components/Dashboard';
 import MoreDetailsPage from './components/MoreDetailsPage';
+import DetectionPage from './components/DetectionPage';  
+import ResultPage from './components/ResultPage';  // Perbaikan di sini
 import { useState } from 'react';
 import { Link, useLocation, Route, Routes } from 'react-router-dom';
 
@@ -21,11 +23,13 @@ export default function App() {
   const isLoginPage = location.pathname === '/login';
   const isRegisterPage = location.pathname === '/register';  // Menambahkan pengecekan untuk halaman register
   const isMoreDetailsPage = location.pathname === '/more-details';
+  const isDetectionPage = location.pathname === '/detection';  // Add this check for the detection page
+  const isResultPage = location.pathname === '/result';  // Menambahkan pengecekan halaman hasil
 
   return (
     <>
-      {/* Navbar hanya ditampilkan jika tidak di halaman login, register, dan MoreDetailsPage */}
-      {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && (
+      {/* Navbar dan footer akan disembunyikan untuk halaman ResultPage */}
+      {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && !isDetectionPage && !isResultPage && (
         <nav className="navbar">
           <div className="logo">
             <img src="/logo.png" alt="Sortify Logo" />
@@ -64,10 +68,12 @@ export default function App() {
         <Route path="/education" element={<EducationSection />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/more-details" element={<MoreDetailsPage />} />
+        <Route path="/detection" element={<DetectionPage />} /> 
+        <Route path="/result" element={<ResultPage />} />
       </Routes>
 
-      {/* Footer hanya ditampilkan jika tidak di halaman login, register, dan MoreDetailsPage */}
-      {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && (
+      {/* Footer akan disembunyikan untuk halaman ResultPage */}
+      {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && !isDetectionPage && !isResultPage && (
         <footer>
           <div className="footer-content">
             <p>&copy; 2025 SORTIFY. Semua hak dilindungi.</p>
