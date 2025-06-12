@@ -31,11 +31,11 @@ export default function MapSection() {
       </div>
 
       <div className="map-container">
-        <div style={{ height: "50vh", width: "100%" }}>
+        <div style={{ height: "100%", width: "100%" }}>
           <MapContainer
             center={[-2.5489, 118.0149]}
             zoom={5}
-            style={{ height: "50vh", width: "100%", borderRadius: "10px" }}
+            style={{ height: "100%", width: "100%", borderRadius: "4px" }}
           >
             <TileLayer
               attribution="Tiles &copy; Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
