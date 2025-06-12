@@ -1,8 +1,7 @@
 import React from "react";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import locations from "../dummy/daur_ulang.json"; // sesuaikan path jika beda
-import React from 'react';
+import locations from "../dummy/daur_ulang.json";
 
 export default function MapSection() {
   console.log(locations);
