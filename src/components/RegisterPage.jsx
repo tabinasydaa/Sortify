@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RegisterPage.css';
+import axios from 'axios';
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
@@ -9,14 +10,22 @@ export default function RegisterPage() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (email && password && password === rePassword) {
-      navigate('/login');  // Redirect ke halaman login setelah registrasi
+        try {
+            const response = await axios.post('http://localhost:5000/register', { email, password });
+            console.log(response);  // Lihat apakah response dari backend sesuai
+            alert('Registrasi berhasil!');
+            navigate('/login');  // Redirect ke halaman login setelah registrasi berhasil
+        } catch (error) {
+            console.error('Error during registration:', error);  // Log error jika terjadi
+            alert('Gagal registrasi, coba lagi!');
+        }
     } else {
-      alert('Isi semua field dan pastikan password cocok!');
+        alert('Isi semua field dan pastikan password cocok!');
     }
-  };
+};
 
   return (
     <div className="register-container">
