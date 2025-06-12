@@ -33,7 +33,7 @@ export default function EducationSection() {
           <strong> Tolak, Kurangi, Gunakan Kembali, Daur Ulang,</strong> dan <strong>Kompos</strong>.
           Temukan tips mudah untuk mengurangi dampak lingkungan Anda!
         </p>
-        <button className="btn-edu" onClick={handleMoreDetails}>Lebih Lanjut </button>
+        <button className="btn-edu" onClick={handleMoreDetails}>Lebih Lanjut</button>
       </div>
       <div className="education-image">
         <img src={edukasiImage} alt="Ilustrasi edukasi sampah" />

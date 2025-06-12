@@ -31,8 +31,19 @@ import alat2 from "../images/alat2.png";
 import produk from "../images/produk.png";
 import wadahkaca from "../images/wadahkaca.png";
 import buahbanya from "../images/buahbanya.png";
+import kompos from "../images/kompos.png";
+import minyak from "../images/minyak.png";
+import sayurbuah from "../images/sayurbuah.png";
+import daunkering from "../images/daunkering.png";
+import alami from "../images/alami.png";
+import alami2 from "../images/alami2.png";
+import kimia from "../images/kimia.png";
+import tanam from "../images/tanam.png";
+import airhujan from "../images/airhujan.png";
+import lampu from "../images/lampu.png";
+import pestisida from "../images/pestisida.png";
 import benar from "../images/benar.png";
-import salah from "../images/salah.png";
+import salah from "../images/salah.png";                                          
 
 export default function MoreDetailsPage() {
   const [selectedCategory, setSelectedCategory] = useState("Sekolah");
@@ -89,6 +100,18 @@ export default function MoreDetailsPage() {
           "Siswa bisa membeli makanan tanpa kemasan plastik dengan meminta makanan langsung dimasukkan ke dalam wadah pribadi.",
         images: [bekaldua],
       },
+      {
+        title: "Ganti Lampu dengan LED Hemat Energi",
+        description:
+          "Gantilah lampu biasa dengan lampu LED hemat energi yang lebih ramah lingkungan dan tahan lama.",
+        images: [lampu],
+      },      
+      {
+        title: "Pilih Produk Pembersih Alami",
+        description:
+          "Gunakan bahan alami seperti cuka dan lemon untuk membersihkan rumah, daripada memilih produk pembersih kimia yang merusak lingkungan.",
+        images: [alami],
+      },    
       {
         title: "Bawa Tas Belanja Sendiri",
         description:
@@ -165,6 +188,24 @@ export default function MoreDetailsPage() {
         images: [alat1, alat2],
       },
       {
+        title: "Dari Sisa Makanan ke Kompos",
+        description:
+          "Sisa makanan organik bisa dijadikan kompos untuk kebun atau tanaman.",
+        images: [kompos],
+      },     
+      {
+        title: "Beli Sayuran dan Buah Tanpa Plastik",
+        description:
+          "Pilih bahan makanan segar yang tidak dibungkus plastik, seperti membeli sayuran dan buah dari pasar tanpa kantong plastik.",
+        images: [sayurbuah],
+      },        
+      {
+        title: "Gunakan Minyak Goreng yang Bisa Digunakan Ulang",
+        description:
+          "Pilih minyak goreng yang bisa dipakai lebih dari satu kali untuk mengurangi sampah dan meminimalkan pemborosan.",
+        images: [minyak],
+      },   
+      {
         title: "Beli Produk Daur Ulang",
         description:
           "Pilih produk yang menggunakan kemasan daur ulang.",
@@ -187,9 +228,33 @@ export default function MoreDetailsPage() {
       {
         title: "Gunakan Pupuk Organik",
         description:
-          "Gunakan pupuk organik yang lebih ramah lingkungan untuk tanaman di kebun.",
-        images: [produk],
+          "Gantilah penggunaan pupuk kimia dengan pupuk organik yang lebih ramah lingkungan dan mendukung kesehatan tanah.",
+        images: [kimia, alami2, salah, benar],
       },
+       {
+        title: "Manfaatkan Kompos dari Sisa Tanaman",
+        description:
+          "Gunakan sisa-sisa tanaman seperti daun kering dan rumput untuk membuat kompos yang dapat digunakan kembali di kebun.",
+        images: [daunkering],
+      },   
+       {
+        title: "Gunakan Air Hujan untuk Penyiraman",
+        description:
+          "Kumpulkan air hujan dengan menggunakan wadah atau penampung untuk menyiram tanaman, mengurangi ketergantungan pada air tanah.",
+        images: [airhujan],
+      },      
+       {
+        title: "Gunakan Pestisida Alami",
+        description:
+          "Pilih pestisida alami seperti neem oil atau sabun insektisida berbahan dasar alami untuk menghindari bahan kimia yang merusak lingkungan.",
+        images: [pestisida],
+      },   
+       {
+        title: "Tanam Pohon untuk Mengurangi Karbon",
+        description:
+          "Tanam pohon di kebun untuk membantu menyerap karbon dioksida dan meningkatkan kualitas udara.",
+        images: [tanam],
+      },         
     ],
   };
 
