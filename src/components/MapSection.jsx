@@ -1,4 +1,3 @@
-// src/components/MapSection.jsx
 import React from 'react';
 
 export default function MapSection() {
@@ -8,11 +7,11 @@ export default function MapSection() {
         <svg viewBox="0 0 1200 150" xmlns="http://www.w3.org/2000/svg" className="edu-title-svg-text">
           <text x="50%" y="50%" textAnchor="middle" alignmentBaseline="middle"
             fontFamily="Impact"
-            fontSize="60" /* Ukuran font lebih kecil untuk menyesuaikan */
+            fontSize="60"
             stroke="#102B22"
             strokeWidth="24"
             fill="#E1FEA4"
-            paintOrder="stroke"z
+            paintOrder="stroke"
           >
             PETA SEBARAN SAMPAH DI INDONESIA
           </text>

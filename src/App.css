@@ -33,19 +33,22 @@ body {
 }
 
 .nav-links a {
-  text-decoration: none;
+  text-decoration: none; /* Menghapus underline default */
   color: #1a1a1a;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 0; /* Tidak ada border bawah default */
 }
 
 .nav-links a.active {
-  border-bottom: 2px solid #1a1a1a;
+  border-bottom: 2px solid #1a1a1a; /* Garis bawah muncul saat link aktif */
 }
 
 .nav-links a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Garis bawah muncul saat hover */
+  color: #E1FEA4;
+  border-color: #102B22; /* Ganti warna border bawah saat hover */
 }
 
 /* === RESPONSIVE NAVBAR === */
@@ -180,8 +183,16 @@ body {
 .education-content {
   flex: 1;
   min-width: 300px;
-  padding-right: 2rem;
+  text-align: right; /* Align text and button to the right */
 }
+
+.edu-title-svg {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Align the SVG to the right */
+}
+
+
 
 .edu-description {
   font-family: 'Montserrat', sans-serif;
@@ -189,6 +200,7 @@ body {
   line-height: 1.7;
   margin-bottom: 2rem;
   color: #000000;
+  text-align: right; /* Align text to the right */
 }
 
 .btn-edu {
@@ -202,6 +214,8 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-left: auto; /* Align button to the right */
+  display: block; /* Ensures button is a block-level element */
 }
 
 .btn-edu:hover {
@@ -226,25 +240,36 @@ body {
 .map-section {
   padding: 4rem 3rem;
   background-color: #f9f9f9;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center;     /* Horizontally center the content */
 }
 
-.map-container {
+.edu-title-svg {
   width: 100%;
-  height: 400px;
-  background-color: #e1e1e1;
+  max-width: 1000px;
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.map-placeholder p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: #1a1a1a;
-  font-weight: 400;
-  text-align: center;
+.edu-title-svg-text {
+  width: 100%;
+  text-align: center;  /* Ensure text is centered */
+}
+
+/* === MAP CONTAINER === */
+.map-container {
+  width: 80%;
+  height: 500px;
+  background-color: #e1e1e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 8px solid #102B22;
+  border-radius: 12px;
 }
 
 /* === DETECTION SECTION === */
