@@ -14,7 +14,7 @@ export default function EducationSection() {
       <div className="education-content">
         <div className="edu-title-svg">
           <svg viewBox="0 0 1000 150" xmlns="http://www.w3.org/2000/svg" className="edu-title-svg-text">
-            <text x="0" y="110"
+            <text x="240" y="110"
               fontFamily="Impact"
               fontSize="80"
               stroke="#102B22"

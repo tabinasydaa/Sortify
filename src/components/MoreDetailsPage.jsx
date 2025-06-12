@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./MoreDetailsPage.css";
 
-// Mengimpor gambar 
+// Mengimpor gambar
 import bekal from "../images/bekal.png";
 import isiulang from "../images/isiulang.png";
 import pensilkayu from "../images/pensilkayu.png";
@@ -10,7 +10,7 @@ import botolminum from "../images/botolminum.png";
 import kegiatan from "../images/kegiatan.png";
 import kerajinan from "../images/kerajinan.png";  
 import lomba from "../images/lomba.png";
-import bekal2 from "../images/bekal2.png";
+import bekaldua from "../images/bekaldua.png";
 import totebag from "../images/totebag.png";
 import kresek from "../images/kresek.png";
 import mineral from "../images/mineral.png";
@@ -35,21 +35,65 @@ import benar from "../images/benar.png";
 import salah from "../images/salah.png";
 
 export default function MoreDetailsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("Rumah");
+  const [selectedCategory, setSelectedCategory] = useState("Sekolah");
 
   const tipsData = {
+    Sekolah: [
+      {
+        title: "Membiasakan Bawa Alat Makan Sendiri",
+        description:
+          "Mengajarkan siswa untuk membawa kotak makan dan alat makan sendiri akan mengurangi sampah plastik sekali pakai.",
+        images: [bekal],
+      },
+      {
+        title: "Menyediakan Stasiun Isi Ulang Air Minum",
+        description:
+          "Sekolah bisa menyediakan tempat untuk mengisi ulang air minum, mengurangi sampah botol plastik sekali pakai.",
+        images: [isiulang],
+      },
+      {
+        title: "Beralih Menggunakan Pensil Kayu",
+        description:
+          "Menggunakan pensil kayu, yang dapat terurai secara alami, sebagai pengganti pensil berbahan plastik.",
+        images: [pensilkayu],
+      },
+      {
+        title: "Membuat Bank Sampah Plastik",
+        description:
+          "Membuat bank sampah plastik di sekolah agar siswa bisa mendaur ulang sampah plastik secara terpisah dan efektif.",
+        images: [banksampah],
+      },
+      {
+        title: "Rutinitas Jumat Bersih",
+        description:
+          "Mengadakan rutinitas Jumat Bersih untuk membersihkan sampah plastik di sekitar sekolah.",
+        images: [kegiatan],
+      },
+      {
+        title: "Gunakan Barang Bekas untuk Kerajinan",
+        description:
+          "Gunakan sampah plastik untuk membuat kerajinan tangan di sekolah.",
+        images: [kerajinan],
+      },
+      {
+        title: "Lomba Daur Ulang Sampah",
+        description:
+          "Mengadakan lomba untuk kreativitas siswa dalam mendaur ulang sampah.",
+        images: [lomba],
+      },
+    ],
     Rumah: [
       {
         title: "Membiasakan untuk Tidak Membeli Makanan dengan Kemasan Plastik",
         description:
           "Siswa bisa membeli makanan tanpa kemasan plastik dengan meminta makanan langsung dimasukkan ke dalam wadah pribadi.",
-        images: [bekal2],
+        images: [bekaldua],
       },
       {
         title: "Bawa Tas Belanja Sendiri",
         description:
           "Menggunakan tas kain atau totebag pribadi untuk berbelanja, mengurangi penggunaan kantong plastik.",
-        images: [totebag, kresek, salah, benar],
+        images: [kresek, totebag, salah, benar],
       },
       {
         title: "Gunakan Botol Air Kekinian",
@@ -139,50 +183,6 @@ export default function MoreDetailsPage() {
         images: [buahbanya],
       },
     ],
-    Sekolah: [
-      {
-        title: "Membiasakan Bawa Alat Makan Sendiri",
-        description:
-          "Mengajarkan siswa untuk membawa kotak makan dan alat makan sendiri akan mengurangi sampah plastik sekali pakai.",
-        images: [bekal],
-      },
-      {
-        title: "Menyediakan Stasiun Isi Ulang Air Minum",
-        description:
-          "Sekolah bisa menyediakan tempat untuk mengisi ulang air minum, mengurangi sampah botol plastik sekali pakai.",
-        images: [isiulang],
-      },
-      {
-        title: "Beralih Menggunakan Pensil Kayu",
-        description:
-          "Menggunakan pensil kayu, yang dapat terurai secara alami, sebagai pengganti pensil berbahan plastik.",
-        images: [pensilkayu],
-      },
-      {
-        title: "Membuat Bank Sampah Plastik",
-        description:
-          "Membuat bank sampah plastik di sekolah agar siswa bisa mendaur ulang sampah plastik secara terpisah dan efektif.",
-        images: [banksampah],
-      },
-      {
-        title: "Rutinitas Jumat Bersih",
-        description:
-          "Mengadakan rutinitas Jumat Bersih untuk membersihkan sampah plastik di sekitar sekolah.",
-        images: [kegiatan],
-      },
-      {
-        title: "Gunakan Barang Bekas untuk Kerajinan",
-        description:
-          "Gunakan sampah plastik untuk membuat kerajinan tangan di sekolah.",
-        images: [kerajinan],
-      },
-      {
-        title: "Lomba Daur Ulang Sampah",
-        description:
-          "Mengadakan lomba untuk kreativitas siswa dalam mendaur ulang sampah.",
-        images: [lomba],
-      },
-    ],
     Kebun: [
       {
         title: "Gunakan Pupuk Organik",
@@ -217,14 +217,20 @@ export default function MoreDetailsPage() {
 
       <div className="tip-category">
         <div
+          onClick={() => setSelectedCategory("Sekolah")}
+          className={selectedCategory === "Sekolah" ? "active" : ""}
+        >
+          Sekolah
+        </div>
+        <div
           onClick={() => setSelectedCategory("Rumah")}
           className={selectedCategory === "Rumah" ? "active" : ""}
         >
           Rumah
         </div>
         <div
-          onClick={() => setSelectedCategory("Kamar Mandi")}
-          className={selectedCategory === "Kamar Mandi" ? "active" : ""}
+          onClick={() => setSelectedCategory("KamarMandi")}
+          className={selectedCategory === "KamarMandi" ? "active" : ""}
         >
           Kamar Mandi
         </div>
@@ -233,12 +239,6 @@ export default function MoreDetailsPage() {
           className={selectedCategory === "Dapur" ? "active" : ""}
         >
           Dapur
-        </div>
-        <div
-          onClick={() => setSelectedCategory("Sekolah")}
-          className={selectedCategory === "Sekolah" ? "active" : ""}
-        >
-          Sekolah
         </div>
         <div
           onClick={() => setSelectedCategory("Kebun")}
@@ -250,22 +250,31 @@ export default function MoreDetailsPage() {
 
       <div className="scroll-wrapper">
         <div className="tip-section">
-          {tipsData[selectedCategory].map((tip, index) => (
-            <div key={index} className="tip-card">
-              <h3>{tip.title}</h3>
-              <p>{tip.description}</p>
-              <div className="visual-comparison">
-                <div>
-                  <img src={tip.images[0]} alt="Visual 1" />
-                  <img className="icon" src={tip.images[2]} alt="Salah" />
-                </div>
-                <div>
-                  <img src={tip.images[1]} alt="Visual 2" />
-                  <img className="icon" src={tip.images[3]} alt="Benar" />
+          {tipsData[selectedCategory] && tipsData[selectedCategory].length > 0 ? (
+            tipsData[selectedCategory].map((tip, index) => (
+              <div key={index} className="tip-card">
+                <h3>{tip.title}</h3>
+                <p>{tip.description}</p>
+                <div className="visual-comparison">
+                  {/* Hanya menampilkan gambar jika ada */}
+                  {tip.images[0] && (
+                    <div>
+                      <img src={tip.images[0]} alt="Visual 1" />
+                      {tip.images[2] && <img className="icon" src={tip.images[2]} alt="Salah" />}
+                    </div>
+                  )}
+                  {tip.images[1] && (
+                    <div>
+                      <img src={tip.images[1]} alt="Visual 2" />
+                      {tip.images[3] && <img className="icon" src={tip.images[3]} alt="Benar" />}
+                    </div>
+                  )}
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>Tidak ada data untuk kategori ini</p>
+          )}
         </div>
       </div>
     </div>

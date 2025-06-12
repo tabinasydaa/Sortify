@@ -4,31 +4,32 @@ import EducationSection from './components/EducationSection';
 import MapSection from './components/MapSection';
 import WasteDetectionSection from './components/WasteDetectionSection';
 import LoginPage from './components/LoginPage';
-import RegisterPage from './components/RegisterPage';  // Import RegisterPage
+import RegisterPage from './components/RegisterPage';
 import Dashboard from './components/Dashboard';
 import MoreDetailsPage from './components/MoreDetailsPage';
-import DetectionPage from './components/DetectionPage';  
-import ResultPage from './components/ResultPage';  // Perbaikan di sini
+import DetectionPage from './components/DetectionPage';
+import ResultPage from './components/ResultPage';
 import { useState } from 'react';
-import { Link, useLocation, Route, Routes } from 'react-router-dom';
+import { Link, useLocation, Route, Routes, useNavigate } from 'react-router-dom';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   const isLoginPage = location.pathname === '/login';
-  const isRegisterPage = location.pathname === '/register';  // Menambahkan pengecekan untuk halaman register
+  const isRegisterPage = location.pathname === '/register';
   const isMoreDetailsPage = location.pathname === '/more-details';
-  const isDetectionPage = location.pathname === '/detection';  // Add this check for the detection page
-  const isResultPage = location.pathname === '/result';  // Menambahkan pengecekan halaman hasil
+  const isDetectionPage = location.pathname === '/detection';
+  const isResultPage = location.pathname === '/result';
 
   return (
     <>
-      {/* Navbar dan footer akan disembunyikan untuk halaman ResultPage */}
+      {/* Navbar */}
       {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && !isDetectionPage && !isResultPage && (
         <nav className="navbar">
           <div className="logo">
@@ -36,17 +37,22 @@ export default function App() {
           </div>
           <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
             <li>
-              <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+              <Link to="#home" className={location.pathname === '/' ? 'active' : ''}>
                 Beranda
               </Link>
             </li>
             <li>
-              <Link to="/map" className={location.pathname === '/map' ? 'active' : ''}>
+              <Link to="#map" className={location.pathname === '/map' ? 'active' : ''}>
+                Peta
+              </Link>
+            </li>
+            <li>
+              <Link to="#detection" className={location.pathname === '/detection' ? 'active' : ''}>
                 Deteksi
               </Link>
             </li>
             <li>
-              <Link to="/education" className={location.pathname === '/education' ? 'active' : ''}>
+              <Link to="#education" className={location.pathname === '/education' ? 'active' : ''}>
                 Edukasi
               </Link>
             </li>
@@ -68,11 +74,11 @@ export default function App() {
         <Route path="/education" element={<EducationSection />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/more-details" element={<MoreDetailsPage />} />
-        <Route path="/detection" element={<DetectionPage />} /> 
+        <Route path="/detection" element={<DetectionPage />} />
         <Route path="/result" element={<ResultPage />} />
       </Routes>
 
-      {/* Footer akan disembunyikan untuk halaman ResultPage */}
+      {/* Footer */}
       {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && !isDetectionPage && !isResultPage && (
         <footer>
           <div className="footer-content">

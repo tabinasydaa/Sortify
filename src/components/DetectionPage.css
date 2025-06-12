@@ -1,27 +1,42 @@
+/* === DETECTION CONTAINER === */
 .detection-container {
   padding: 20px;
   text-align: center;
-  background-color: #e2f8c7;  /* Background hijau muda */
+  background-color: #E1FEA4;
+  border: 8px solid #102B22;
   border-radius: 10px;
   max-width: 800px;
   margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;  /* Add absolute positioning */
+  top: 50%;  /* Center it vertically */
+  left: 50%;  /* Center it horizontally */
+  transform: translate(-50%, -50%);  /* Adjust for exact centering */
+  width: 100%;  /* Ensure it takes full width on smaller screens */
+  box-sizing: border-box;
 }
 
+/* === TITLES === */
 h2, h3 {
-  font-family: 'Arial', sans-serif;
-  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  color: #102B22;
 }
 
+/* === UPLOAD CONTAINER === */
 .upload-container {
   margin: 20px 0;
 }
 
+/* === FILE UPLOAD LABEL === */
 .file-upload-label {
   display: inline-block;
   width: 100%;
   padding: 20px;
-  border: 2px dashed #1d3d44; /* Garis putus-putus biru */
-  background-color: #1d3d44;
+  border: 2px dashed #102B22;
+  background-color: #102B22;
   color: white;
   cursor: pointer;
   text-align: center;
@@ -33,18 +48,19 @@ h2, h3 {
 }
 
 .uploaded-image {
-  width: 80%; /* Mengurangi ukuran gambar */
-  max-width: 400px; /* Maksimum lebar 400px */
+  width: 80%;
+  max-width: 400px;
   border-radius: 10px;
   margin-top: 10px;
 }
 
+/* === CAMERA BUTTON === */
 .camera-btn {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #1d3d44;
-  color: white;
+  background-color: #102B22;
+  color: #E1FEA4;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -52,4 +68,15 @@ h2, h3 {
 
 .camera-btn:hover {
   background-color: #15302b;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .detection-container {
+    padding: 15px;
+  }
+
+  .camera-btn {
+    width: 100%;
+  }
 }

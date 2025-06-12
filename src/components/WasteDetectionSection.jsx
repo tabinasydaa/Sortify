@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate
-import deteksiImage from '../images/deteksi.png';
+import deteksiImage from '../images/tipsedukasi.png';
 
 export default function WasteDetectionSection() {
   const navigate = useNavigate();  // Initialize navigate hook

@@ -84,6 +84,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding-bottom: 1rem;
+  justify-items: center;  /* Pusatkan semua item dalam grid */
 }
 
 .tip-card {
@@ -106,19 +107,22 @@
 
 .visual-comparison {
   display: flex;
-  justify-content: space-around;
+  justify-content: center; /* Pusatkan gambar */
   align-items: center;
+  gap: 1rem; /* Jarak antar gambar */
 }
 
 .visual-comparison div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Tambahkan margin auto jika hanya satu gambar */
 }
 
 .visual-comparison img {
-  width: 60px;
-  height: auto;
+  max-width: 100%;  /* Gambar tetap responsif */
+  height: auto;  /* Pastikan aspek rasio gambar tetap terjaga */
   margin-bottom: 5px;
 }
 
