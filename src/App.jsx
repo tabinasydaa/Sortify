@@ -1,15 +1,17 @@
 import './App.css';
 import background from './images/background.png';
 import EducationSection from './components/EducationSection';
+import MoreDetailsPage from './components/MoreDetailsPage';
 import MapSection from './components/MapSection';
 import WasteDetectionSection from './components/WasteDetectionSection';
+import WasteProcessingSection from './components/WasteProcessingSection';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import Dashboard from './components/Dashboard';
-import MoreDetailsPage from './components/MoreDetailsPage';
+import WasteRecyclingDetails from './components/WasteRecyclingDetails';
 import DetectionPage from './components/DetectionPage';
 import ResultPage from './components/ResultPage';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation, Route, Routes, useNavigate } from 'react-router-dom';
 
 export default function App() {
@@ -21,42 +23,51 @@ export default function App() {
     setMenuOpen(!menuOpen);
   };
 
+  // Sembunyikan navbar/footer di halaman tertentu
   const isLoginPage = location.pathname === '/login';
   const isRegisterPage = location.pathname === '/register';
-  const isMoreDetailsPage = location.pathname === '/more-details';
+  const isWasteDetailsPage = location.pathname === '/waste-recycling-details';
   const isDetectionPage = location.pathname === '/detection';
   const isResultPage = location.pathname === '/result';
+  const isMoreDetailsPage = location.pathname === '/more-details';
+
+  // Scroll ke hash jika ada di URL
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   return (
     <>
       {/* Navbar */}
-      {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && !isDetectionPage && !isResultPage && (
+      {!isLoginPage && !isRegisterPage && !isWasteDetailsPage && !isDetectionPage && !isResultPage && !isMoreDetailsPage && (
         <nav className="navbar">
           <div className="logo">
             <img src="/logo.png" alt="Sortify Logo" />
           </div>
           <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
             <li>
-              <Link to="#home" className={location.pathname === '/' ? 'active' : ''}>
-                Beranda
-              </Link>
+              <Link to="/#home">Beranda</Link>
             </li>
             <li>
-              <Link to="#map" className={location.pathname === '/map' ? 'active' : ''}>
-                Peta
-              </Link>
+              <Link to="/#map">Peta</Link>
             </li>
             <li>
-              <Link to="#detection" className={location.pathname === '/detection' ? 'active' : ''}>
-                Deteksi
-              </Link>
+              <Link to="/#detection">Deteksi</Link>
             </li>
             <li>
-              <Link to="#education" className={location.pathname === '/education' ? 'active' : ''}>
-                Edukasi
-              </Link>
+              <Link to="/#education">Edukasi</Link>
             </li>
-            <li><Link to="/login">Login</Link></li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
           <div className="menu-icon" onClick={toggleMenu}>
             <span className="menu-icon-bar"></span>
@@ -66,6 +77,7 @@ export default function App() {
         </nav>
       )}
 
+      {/* Routing */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
@@ -73,20 +85,22 @@ export default function App() {
         <Route path="/map" element={<MapSection />} />
         <Route path="/education" element={<EducationSection />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/more-details" element={<MoreDetailsPage />} />
+        <Route path="/waste-recycling-details" element={<WasteRecyclingDetails />} />
         <Route path="/detection" element={<DetectionPage />} />
         <Route path="/result" element={<ResultPage />} />
+        <Route path="/waste-processing" element={<WasteProcessingSection />} />
+        <Route path="/more-details" element={<MoreDetailsPage />} />
       </Routes>
 
       {/* Footer */}
-      {!isLoginPage && !isRegisterPage && !isMoreDetailsPage && !isDetectionPage && !isResultPage && (
+      {!isLoginPage && !isRegisterPage && !isWasteDetailsPage && !isDetectionPage && !isResultPage && !isMoreDetailsPage && (
         <footer>
           <div className="footer-content">
             <p>&copy; 2025 SORTIFY. Semua hak dilindungi.</p>
             <ul className="footer-links">
-              <li><a href="#">Kebijakan Privasi</a></li>
-              <li><a href="#">Syarat & Ketentuan</a></li>
-              <li><a href="#">Hubungi Kami</a></li>
+              <li><a href="/#home">Beranda</a></li>
+              <li><a href="/#map">Peta</a></li>
+              <li><a href="/#detection">Deteksi</a></li>
             </ul>
           </div>
         </footer>
@@ -95,7 +109,7 @@ export default function App() {
   );
 }
 
-// Komponen untuk halaman Home (Beranda)
+// Halaman Home dengan section id agar bisa discroll ke sana
 const Home = () => {
   return (
     <>
@@ -107,9 +121,9 @@ const Home = () => {
                 textAnchor="middle"
                 fontFamily="Impact"
                 fontSize="100"
-                stroke="#E1FEA4"       
+                stroke="#E1FEA4"
                 strokeWidth="20"
-                fill="#102B22"         
+                fill="#102B22"
                 paintOrder="stroke"
               >
                 SORTIFY
@@ -123,9 +137,11 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Setiap section diberi id yang sesuai dengan anchor link */}
       <MapSection id="map" />
       <WasteDetectionSection id="detection" />
       <EducationSection id="education" />
+      <WasteProcessingSection id="waste-processing" />
     </>
   );
 };
