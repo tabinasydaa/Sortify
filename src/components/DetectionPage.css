@@ -1,0 +1,82 @@
+/* === DETECTION CONTAINER === */
+.detection-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #E1FEA4;
+  border: 8px solid #102B22;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;  /* Add absolute positioning */
+  top: 50%;  /* Center it vertically */
+  left: 50%;  /* Center it horizontally */
+  transform: translate(-50%, -50%);  /* Adjust for exact centering */
+  width: 100%;  /* Ensure it takes full width on smaller screens */
+  box-sizing: border-box;
+}
+
+/* === TITLES === */
+h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #102B22;
+}
+
+/* === UPLOAD CONTAINER === */
+.upload-container {
+  margin: 20px 0;
+}
+
+/* === FILE UPLOAD LABEL === */
+.file-upload-label {
+  display: inline-block;
+  width: 100%;
+  padding: 20px;
+  border: 2px dashed #102B22;
+  background-color: #102B22;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.upload-box {
+  padding: 40px;
+}
+
+.uploaded-image {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* === CAMERA BUTTON === */
+.camera-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #102B22;
+  color: #E1FEA4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.camera-btn:hover {
+  background-color: #15302b;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .detection-container {
+    padding: 15px;
+  }
+
+  .camera-btn {
+    width: 100%;
+  }
+}

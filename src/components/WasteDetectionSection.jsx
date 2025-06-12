@@ -1,33 +1,40 @@
 import React from 'react';
-import deteksiImage from '../images/deteksi.png'; // Impor gambar
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import deteksiImage from '../images/tipsedukasi.png';
 
 export default function WasteDetectionSection() {
+  const navigate = useNavigate();  // Initialize navigate hook
+
+  // Function to handle the button click and redirect to the /detection page
+  const handleNavigate = () => {
+    navigate('/detection');  // Redirect to the DetectionSection page
+  };
+
   return (
     <section className="detection-section">
       <div className="content-container">
-        {/* Gambar di sebelah kiri */}
+        {/* Title */}
+        <svg viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" className="edu-title-svg-text-custom">
+          <text
+            x="300"
+            y="60"
+            textAnchor="middle"
+            fontFamily="Impact"
+            fontSize="32"
+            stroke="#102B22"
+            strokeWidth="16"
+            fill="#E1FEA4"
+            paintOrder="stroke"
+          >
+            DETEKSI SAMPAH ANDA SEKARANG!!
+          </text>
+        </svg>
+
         <div className="image-container">
           <img src={deteksiImage} alt="Ilustrasi Deteksi Sampah" />
         </div>
 
-        {/* Teks di sebelah kanan */}
-        <div className="text-container">
-          <svg viewBox="0 0 1600 300" xmlns="http://www.w3.org/2000/svg" className="edu-title-svg-text">
-            <text x="50%" y="50%" textAnchor="middle" alignmentBaseline="middle"
-              fontFamily="Impact"
-              fontSize="72" /* Memperbesar ukuran font untuk "DETEKSI SAMPAH ANDA SEKARANG!!" */
-              stroke="#102B22"
-              strokeWidth="24"
-              fill="#E1FEA4"
-              paintOrder="stroke"
-            >
-              DETEKSI SAMPAH ANDA SEKARANG!!
-            </text>
-          </svg>
-          <h2>Bebas Polusi</h2>
-          <h2>Hidup Bersih</h2>
-          <button className="btn-continue">Lebih Lanjut</button>
-        </div>
+        <button className="btn-continue" onClick={handleNavigate}>Lebih Lanjut</button>
       </div>
     </section>
   );
