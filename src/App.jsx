@@ -1,3 +1,4 @@
+// [Import tetap sama seperti punyamu]
 import './App.css';
 import background from './images/background.png';
 import EducationSection from './components/EducationSection';
@@ -22,7 +23,6 @@ export default function App() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const isLoggedIn = !!localStorage.getItem('user');
 
-  // halaman yang tidak butuh navbar/footer
   const hiddenPages = [
     '/login', '/register', '/waste-recycling-details',
     '/detection', '/result', '/more-details'
@@ -30,7 +30,6 @@ export default function App() {
   const hideNav = hiddenPages.includes(location.pathname);
   const isDashboardPage = location.pathname === '/dashboard';
 
-  // Scroll to hash if any
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
@@ -103,11 +102,49 @@ export default function App() {
         <Route path="/waste-processing" element={<WasteProcessingSection />} />
         <Route path="/more-details" element={<MoreDetailsPage />} />
       </Routes>
+
+      {/* FOOTER */}
+      {!hideNav && (
+        <footer style={{
+          backgroundColor: '#102b22',
+          color: 'white',
+          padding: '2rem 3rem',
+          textAlign: 'center',
+          marginTop: '3rem'
+        }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <p style={{ fontSize: '1rem', fontWeight: 400, marginBottom: '1rem' }}>
+              © 2025 Sortify. Semua hak dilindungi.
+            </p>
+            <ul style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '2rem',
+              listStyle: 'none',
+              padding: 0,
+              margin: 0
+            }}>
+              <li><a href="#map" style={linkStyle}>Peta</a></li>
+              <li><a href="#education" style={linkStyle}>Edukasi</a></li>
+              <li><a href="#detection" style={linkStyle}>Deteksi</a></li>
+            </ul>
+          </div>
+        </footer>
+      )}
     </>
   );
 }
 
-// Halaman home biasa
+// Gaya link di footer
+const linkStyle = {
+  textDecoration: 'none',
+  color: 'white',
+  fontWeight: 600,
+  fontSize: '1.1rem',
+  transition: 'color 0.3s ease',
+};
+
+// Halaman Home
 const Home = () => {
   return (
     <>
@@ -141,7 +178,7 @@ const Home = () => {
   );
 };
 
-// Dashboard layout: dashboard + section lain
+// Layout Dashboard
 const DashboardLayout = () => {
   return (
     <>
@@ -149,6 +186,7 @@ const DashboardLayout = () => {
       <MapSection id="map" />
       <WasteDetectionSection id="detection" />
       <EducationSection id="education" />
+      <WasteProcessingSection id="waste-processing" />
     </>
   );
 };

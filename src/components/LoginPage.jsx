@@ -14,14 +14,15 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (email && password) {
-      try {
-        const response = await axios.post('http://localhost:5000/login', { email, password });
-        localStorage.setItem('token', response.data.token);
-        navigate('/dashboard');
-      } catch (error) {
-        alert('Gagal login, cek kembali email dan password!');
-        console.error(error);
-      }
+        try {
+            // Kirim data login ke backend
+            const response = await axios.post('http://localhost:5000/login', { email, password });
+            localStorage.setItem('token', response.data.token);  // Simpan token JWT di localStorage
+            navigate('/dashboard');  // Arahkan ke halaman Dashboard setelah login berhasil
+        } catch (error) {
+            alert('Gagal login, cek kembali email dan password!');
+            console.error(error);
+        }
     } else {
       alert('Email dan password harus diisi!');
     }
