@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate untuk mengarahkan setelah login
 import './LoginPage.css'; // Pastikan impor file CSS di sini
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -10,17 +11,22 @@ export default function LoginPage() {
   
   const navigate = useNavigate(); // Inisialisasi navigate
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Logika login (misalnya cek email dan password)
     if (email && password) {
-      // Jika login berhasil, arahkan ke halaman Dashboard atau halaman lain
-      navigate('/dashboard');  // Pindahkan ke halaman Dashboard setelah login
+        try {
+            // Kirim data login ke backend
+            const response = await axios.post('http://localhost:5000/login', { email, password });
+            localStorage.setItem('token', response.data.token);  // Simpan token JWT di localStorage
+            navigate('/dashboard');  // Arahkan ke halaman Dashboard setelah login berhasil
+        } catch (error) {
+            alert('Gagal login, cek kembali email dan password!');
+            console.error(error);
+        }
     } else {
-      alert('Email dan password harus diisi!');
+        alert('Email dan password harus diisi!');
     }
-  };
+};
 
   return (
     <div className="login-container">

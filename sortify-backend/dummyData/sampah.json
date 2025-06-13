@@ -1,0 +1,42 @@
+[
+    {
+      "name": "Botol Plastik",
+      "category": "Plastik"
+    },
+    {
+      "name": "Kardus Bekas",
+      "category": "Kertas"
+    },
+    {
+      "name": "Kaleng Minuman",
+      "category": "Logam"
+    },
+    {
+      "name": "Botol Kaca",
+      "category": "Kaca"
+    },
+    {
+      "name": "Sisa Makanan",
+      "category": "Organik"
+    },
+    {
+      "name": "Styrofoam",
+      "category": "Non-Organik"
+    },
+    {
+      "name": "Kantong Kresek",
+      "category": "Plastik"
+    },
+    {
+      "name": "Koran Lama",
+      "category": "Kertas"
+    },
+    {
+      "name": "Baterai Bekas",
+      "category": "B3"
+    },
+    {
+      "name": "Daun Kering",
+      "category": "Organik"
+    }
+  ]
