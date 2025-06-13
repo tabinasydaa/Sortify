@@ -15,15 +15,15 @@ export default function EducationSection({ id }) {
       <div className="education-content">
         <div className="edu-title-svg">
           <svg viewBox="0 0 1000 150" xmlns="http://www.w3.org/2000/svg" className="edu-title-svg-text">
-            <text x="240" y="110"
+            <text x="80" y="110"
               fontFamily="Impact"
-              fontSize="80"
+              fontSize="72"
               stroke="#102B22"
               strokeWidth="20"
               fill="#E1FEA4"
               paintOrder="stroke"
             >
-              100 TIPS TO GET TO ZERO
+              100 TIPS MENCAPAI ZERO-WASTE
             </text>
           </svg>
         </div>
