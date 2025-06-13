@@ -13,6 +13,7 @@ export default function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     if (email && password) {
         try {
             // Kirim data login ke backend
@@ -25,6 +26,15 @@ export default function LoginPage() {
         }
     } else {
         alert('Email dan password harus diisi!');
+=======
+    
+    // Logika login (misalnya cek email dan password)
+  if (email && password) {
+    localStorage.setItem('user', JSON.stringify({ email })); // simpan info login
+    navigate('/dashboard');
+  }else {
+      alert('Email dan password harus diisi!');
+>>>>>>> 990dd2a (dashboard)
     }
 };
 

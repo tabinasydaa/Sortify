@@ -1,0 +1,80 @@
+.dashboard-section {
+  padding: 6rem 2rem 3rem; /* Tambahkan padding-top agar tidak tertutup navbar */
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dashboard-container h2 {
+  font-size: 2rem;
+  color: #102B22;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-container p {
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  flex: 1;
+  padding: 1rem;
+  background-color: #E1FEA4;
+  border: 2px solid #102B22;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.dashboard-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-actions button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #102B22;
+  color: #E1FEA4;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dashboard-actions button:hover {
+  background-color: #0b1d19;
+}
+
+.dashboard-history ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.dashboard-history li {
+  background-color: #f0f0f0;
+  border-left: 4px solid #102B22;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}

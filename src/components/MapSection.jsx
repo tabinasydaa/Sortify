@@ -3,10 +3,10 @@ import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import locations from "../dummy/daur_ulang.json";
 
-export default function MapSection() {
+export default function MapSection({ id }) {
   console.log(locations);
   return (
-    <section className="map-section">
+    <section id={id} className="map-section">
       <div className="edu-title-svg">
         <svg
           viewBox="0 0 1200 150"

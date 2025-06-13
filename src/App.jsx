@@ -19,19 +19,18 @@ export default function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const isLoggedIn = !!localStorage.getItem('user');
 
-  // Sembunyikan navbar/footer di halaman tertentu
-  const isLoginPage = location.pathname === '/login';
-  const isRegisterPage = location.pathname === '/register';
-  const isWasteDetailsPage = location.pathname === '/waste-recycling-details';
-  const isDetectionPage = location.pathname === '/detection';
-  const isResultPage = location.pathname === '/result';
-  const isMoreDetailsPage = location.pathname === '/more-details';
+  // halaman yang tidak butuh navbar/footer
+  const hiddenPages = [
+    '/login', '/register', '/waste-recycling-details',
+    '/detection', '/result', '/more-details'
+  ];
+  const hideNav = hiddenPages.includes(location.pathname);
+  const isDashboardPage = location.pathname === '/dashboard';
 
-  // Scroll ke hash jika ada di URL
+  // Scroll to hash if any
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
@@ -44,30 +43,43 @@ export default function App() {
     }
   }, [location]);
 
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setMenuOpen(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    navigate('/login');
+  };
+
   return (
     <>
-      {/* Navbar */}
-      {!isLoginPage && !isRegisterPage && !isWasteDetailsPage && !isDetectionPage && !isResultPage && !isMoreDetailsPage && (
-        <nav className="navbar">
+      {/* NAVBAR */}
+      {!hideNav && (
+        <nav className={`navbar ${isDashboardPage ? 'dashboard-navbar' : ''}`}>
           <div className="logo">
             <img src="/logo.png" alt="Sortify Logo" />
           </div>
           <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-            <li>
-              <Link to="/#home">Beranda</Link>
-            </li>
-            <li>
-              <Link to="/#map">Peta</Link>
-            </li>
-            <li>
-              <Link to="/#detection">Deteksi</Link>
-            </li>
-            <li>
-              <Link to="/#education">Edukasi</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
+            {isLoggedIn && isDashboardPage ? (
+              <>
+                <li><Link to="/dashboard">Beranda</Link></li>
+                <li><button onClick={() => scrollToSection('map')}>Peta</button></li>
+                <li><button onClick={() => scrollToSection('detection')}>Deteksi</button></li>
+                <li><button onClick={() => scrollToSection('education')}>Edukasi</button></li>
+                <li><button className="logout-button" onClick={handleLogout}>Keluar</button></li>
+              </>
+            ) : (
+              <>
+                <li><button onClick={() => scrollToSection("home")}>Beranda</button></li>
+                <li><button onClick={() => scrollToSection("map")}>Peta</button></li>
+                <li><button onClick={() => scrollToSection("detection")}>Deteksi</button></li>
+                <li><button onClick={() => scrollToSection("education")}>Edukasi</button></li>
+                <li><Link to="/login">Login</Link></li>
+              </>
+            )}
           </ul>
           <div className="menu-icon" onClick={toggleMenu}>
             <span className="menu-icon-bar"></span>
@@ -77,39 +89,25 @@ export default function App() {
         </nav>
       )}
 
-      {/* Routing */}
+      {/* ROUTES */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/dashboard" element={<DashboardLayout />} />
         <Route path="/map" element={<MapSection />} />
         <Route path="/education" element={<EducationSection />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/waste-recycling-details" element={<WasteRecyclingDetails />} />
         <Route path="/detection" element={<DetectionPage />} />
         <Route path="/result" element={<ResultPage />} />
         <Route path="/waste-processing" element={<WasteProcessingSection />} />
         <Route path="/more-details" element={<MoreDetailsPage />} />
       </Routes>
-
-      {/* Footer */}
-      {!isLoginPage && !isRegisterPage && !isWasteDetailsPage && !isDetectionPage && !isResultPage && !isMoreDetailsPage && (
-        <footer>
-          <div className="footer-content">
-            <p>&copy; 2025 SORTIFY. Semua hak dilindungi.</p>
-            <ul className="footer-links">
-              <li><a href="/#home">Beranda</a></li>
-              <li><a href="/#map">Peta</a></li>
-              <li><a href="/#detection">Deteksi</a></li>
-            </ul>
-          </div>
-        </footer>
-      )}
     </>
   );
 }
 
-// Halaman Home dengan section id agar bisa discroll ke sana
+// Halaman home biasa
 const Home = () => {
   return (
     <>
@@ -130,18 +128,27 @@ const Home = () => {
               </text>
             </svg>
           </div>
-          <p>
-            Teman cerdas dalam memilah dan mengelola sampah untuk lingkungan yang lebih bersih.
-          </p>
+          <p>Teman cerdas dalam memilah dan mengelola sampah untuk lingkungan yang lebih bersih.</p>
           <button>Ayo Mulai</button>
         </div>
       </section>
 
-      {/* Setiap section diberi id yang sesuai dengan anchor link */}
       <MapSection id="map" />
       <WasteDetectionSection id="detection" />
       <EducationSection id="education" />
       <WasteProcessingSection id="waste-processing" />
+    </>
+  );
+};
+
+// Dashboard layout: dashboard + section lain
+const DashboardLayout = () => {
+  return (
+    <>
+      <Dashboard />
+      <MapSection id="map" />
+      <WasteDetectionSection id="detection" />
+      <EducationSection id="education" />
     </>
   );
 };

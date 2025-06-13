@@ -29,43 +29,51 @@ video {
   background-color: white;
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 3rem;
   align-items: center;
+  padding: 1.25rem 2rem;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .navbar .logo img {
   width: 50px;
 }
 
+/* === NAV LINKS === */
 .nav-links {
   display: flex;
-  gap: 2.5rem;
   list-style: none;
+  gap: 2rem;
 }
 
-.nav-links a {
-  text-decoration: none;
+.nav-links a,
+.nav-links button {
+  font-family: 'Montserrat', sans-serif;
+  background: none;
+  border: none;
   color: #1a1a1a;
+  text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  border-bottom: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.nav-links a.active {
-  border-bottom: 2px solid #1a1a1a;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
+.nav-links a:hover,
+.nav-links button:hover {
   color: #E1FEA4;
-  border-color: #102B22;
 }
 
-/* Hamburger menu */
+/* Active Link */
+.nav-links a.active {
+  border-bottom: 2px solid #102B22;
+}
+
+/* === MENU ICON (Hamburger) === */
 .menu-icon {
   display: none;
   flex-direction: column;
@@ -77,21 +85,21 @@ video {
   width: 25px;
   height: 3px;
   background-color: #1a1a1a;
+  border-radius: 2px;
 }
 
 /* === RESPONSIVE NAVBAR === */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
-    position: absolute;
-    top: 80px;
-    right: 0;
-    background-color: white;
-    width: 100%;
-    padding: 1rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     flex-direction: column;
-    gap: 1rem;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
 
   .nav-links.active {
@@ -100,7 +108,7 @@ video {
 
   .nav-links li {
     text-align: center;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
   }
 
   .menu-icon {

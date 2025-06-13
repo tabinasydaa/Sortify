@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate
 import deteksiImage from '../images/tipsedukasi.png';
 
-export default function WasteDetectionSection() {
+export default function WasteDetectionSection({ id }) {
   const navigate = useNavigate();  // Initialize navigate hook
 
   // Function to handle the button click and redirect to the /detection page
@@ -11,7 +11,7 @@ export default function WasteDetectionSection() {
   };
 
   return (
-    <section className="detection-section">
+    <section id={id} className="detection-section">
       <div className="content-container">
         {/* Title */}
         <svg viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" className="edu-title-svg-text-custom">

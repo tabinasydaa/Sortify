@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import edukasiImage from '../images/edukasi.png';
 
-export default function EducationSection() {
+export default function EducationSection({ id }) {
   const navigate = useNavigate(); // Inisialisasi navigate
 
   const handleMoreDetails = () => {
@@ -10,7 +10,7 @@ export default function EducationSection() {
   };
 
   return (
-    <section className="education-section">
+    <section id={id} className="education-section">
       <div className="education-content">
         <div className="edu-title-svg">
           <svg viewBox="0 0 1000 150" xmlns="http://www.w3.org/2000/svg" className="edu-title-svg-text">
