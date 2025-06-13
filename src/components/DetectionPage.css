@@ -78,5 +78,31 @@ h2, h3 {
 
   .camera-btn {
     width: 100%;
+    padding: 12px; /* Add padding for button on small screens */
+    font-size: 14px; /* Adjust font size */
+  }
+
+  .uploaded-image {
+    width: 100%; /* Make the image responsive on small screens */
+    max-width: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .detection-container {
+    padding: 10px;
+  }
+
+  .upload-box {
+    padding: 30px; /* Reduce padding for mobile */
+  }
+
+  .uploaded-image {
+    max-width: 100%;
+    width: 100%; /* Full width on small screens */
+  }
+
+  .camera-btn {
+    font-size: 14px;
   }
 }

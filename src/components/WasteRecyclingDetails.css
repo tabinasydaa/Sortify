@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
+/* === WASTE RECYCLING DETAILS === */
 .waste-recycling-details {
   padding: 4rem 1.5rem;
   background-color: #f9f9f9;
@@ -79,21 +80,53 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
+/* === RESPONSIVE DESIGN === */
+
+/* Mobile (max-width: 576px) */
+@media (max-width: 576px) {
   .content-layout {
-    flex-direction: column;
+    flex-direction: column; /* Mengubah tata letak menjadi kolom pada perangkat kecil */
   }
 
   .text-side,
   .video-side {
-    flex: 1 1 100%;
+    flex: 1 1 100%; /* Menyusun konten teks dan video menjadi 100% lebar masing-masing */
+    margin-bottom: 20px; /* Menambah jarak antar elemen */
   }
 
   .details-content h1 {
-    font-size: 2rem;
+    font-size: 2rem; /* Mengurangi ukuran font pada judul */
   }
 
   .details-content h4 {
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* Mengurangi ukuran font pada subjudul */
+  }
+
+  .video-side iframe {
+    height: 200px; /* Mengurangi ukuran video di layar kecil */
+  }
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .content-layout {
+    flex-direction: column; /* Menyusun teks dan video secara vertikal pada tablet */
+  }
+
+  .text-side,
+  .video-side {
+    flex: 1 1 100%; /* Mengisi 100% lebar layar pada tablet */
+  }
+
+  .details-content h1 {
+    font-size: 2rem; /* Mengurangi ukuran font pada judul */
+  }
+
+  .details-content h4 {
+    font-size: 1.25rem; /* Mengurangi ukuran font pada subjudul */
+  }
+
+  .video-side iframe {
+    height: 240px; /* Menyesuaikan ukuran video agar tidak terlalu besar */
   }
 }

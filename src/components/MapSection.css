@@ -1,0 +1,67 @@
+/* === MAP SECTION === */
+.map-section {
+    padding: 4rem 3rem;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .edu-title-svg {
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .edu-title-svg-text {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  
+  /* === MAP CONTAINER === */
+  .map-container {
+    width: 80%;
+    height: 500px;
+    background-color: #e1e1e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid #102B22;
+    border-radius: 12px;
+  }
+  
+  /* === RESPONSIVE DESIGN === */
+  
+  /* Mobile (max-width: 576px) */
+  @media (max-width: 576px) {
+    .map-section {
+      padding: 2rem 1rem; /* Menyesuaikan padding untuk layar kecil */
+    }
+  
+    .map-container {
+      width: 100%; /* Memenuhi lebar layar ponsel */
+      height: 300px; /* Mengurangi tinggi peta pada ponsel */
+    }
+  }
+  
+  /* Tablet (max-width: 768px) */
+  @media (max-width: 768px) {
+    .map-container {
+      width: 90%; /* Memastikan peta mengisi layar tablet */
+      height: 400px; /* Menyesuaikan ukuran peta */
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1200px) {
+    .map-container {
+      width: 80%; /* Menyesuaikan lebar peta pada desktop */
+      height: 500px; /* Ukuran peta tetap pada desktop besar */
+    }
+  }
+  
