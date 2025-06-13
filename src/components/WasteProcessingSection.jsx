@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import processingImage from '../images/banksampah.png'; // Sesuaikan dengan gambar yang sesuai
+import './WasteProcessingSection.css';
 
 export default function WasteProcessingSection() {
   const navigate = useNavigate(); // Inisialisasi navigate

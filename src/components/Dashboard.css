@@ -1,8 +1,20 @@
+/* === GLOBAL === */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === DASHBOARD SECTION === */
 .dashboard-section {
   padding: 6rem 2rem 3rem; /* Tambahkan padding-top agar tidak tertutup navbar */
   background-color: #f5f5f5;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .dashboard-container {
@@ -11,7 +23,7 @@
   background: white;
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-container h2 {
@@ -25,6 +37,7 @@
   margin-bottom: 2rem;
 }
 
+/* === CARDS === */
 .dashboard-cards {
   display: flex;
   justify-content: space-between;
@@ -42,6 +55,7 @@
   font-weight: 600;
 }
 
+/* === ACTION BUTTONS === */
 .dashboard-actions {
   display: flex;
   flex-direction: column;
@@ -65,6 +79,7 @@
   background-color: #0b1d19;
 }
 
+/* === HISTORY SECTION === */
 .dashboard-history ul {
   list-style: none;
   padding-left: 0;
@@ -77,4 +92,64 @@
   margin-bottom: 0.5rem;
   border-radius: 6px;
   font-size: 0.95rem;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+  .dashboard-container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .dashboard-container h2 {
+    font-size: 1.5rem;  /* Ukuran font lebih kecil di ponsel */
+  }
+
+  .dashboard-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card {
+    flex: none;
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-actions {
+    gap: 0.75rem;
+  }
+
+  .dashboard-actions button {
+    font-size: 0.9rem; /* Lebih kecil di ponsel */
+    padding: 0.75rem;
+  }
+
+  .dashboard-history li {
+    font-size: 0.85rem; /* Ukuran font lebih kecil di ponsel */
+  }
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .dashboard-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .dashboard-actions button {
+    padding: 0.75rem 1.2rem;
+  }
+
+  .dashboard-history li {
+    font-size: 0.9rem; /* Menyesuaikan ukuran font */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .dashboard-container {
+    max-width: 1000px;
+  }
 }

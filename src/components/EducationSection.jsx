@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import edukasiImage from '../images/edukasi.png';
+import './EducationSection.css';
 
 export default function EducationSection({ id }) {
   const navigate = useNavigate(); // Inisialisasi navigate
