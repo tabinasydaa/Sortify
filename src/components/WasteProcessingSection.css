@@ -1,0 +1,140 @@
+/* === WASTE PROCESSING SECTION === */
+.waste-processing-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 3rem;
+    background-color: #f9f9f9;
+    flex-wrap: wrap;
+  }
+  
+  .processing-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+  
+  .processing-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .processing-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+  }
+  
+  .processing-title-svg {
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .processing-title-svg-text {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  
+  .processing-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #000000;
+  }
+  
+  .btn-process {
+    font-weight: bold;
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #E1FEA4;
+    color: #102B22;
+    border: 8px solid #102B22;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+  }
+  
+  .btn-process:hover {
+    background-color: #102B22;
+    color: #E1FEA4;
+    border-color: #102B22;
+    transform: scale(1.05);
+  }
+  
+  /* === RESPONSIVE DESIGN === */
+  
+  /* Mobile (max-width: 576px) */
+  @media (max-width: 576px) {
+    .waste-processing-section {
+      flex-direction: column;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+  
+    .processing-content {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+  
+    .processing-image {
+      margin-bottom: 2rem;
+    }
+  
+    .processing-description {
+      font-size: 1rem;
+    }
+  
+    .btn-process {
+      margin: 0 auto;
+      width: 100%;
+      padding: 12px;
+    }
+  
+    .processing-title-svg-text {
+      font-size: 60px;
+    }
+  }
+  
+  /* Tablet (max-width: 768px) */
+  @media (max-width: 768px) {
+    .waste-processing-section {
+      flex-direction: column;
+      padding: 3rem 2rem;
+    }
+  
+    .processing-content {
+      text-align: center;
+    }
+  
+    .processing-image img {
+      max-width: 80%; /* Gambar lebih kecil di tablet */
+    }
+  
+    .btn-process {
+      padding: 12px 24px;
+      font-size: 0.9rem;
+    }
+  
+    .processing-title-svg-text {
+      font-size: 70px;
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1200px) {
+    .waste-processing-section {
+      padding: 4rem 3rem;
+    }
+  
+    .processing-content {
+      text-align: left;
+    }
+  }
+  

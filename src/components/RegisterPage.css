@@ -1,4 +1,9 @@
-/* Styling untuk halaman registrasi */
+/* === GLOBAL === */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* === REGISTER CONTAINER === */
 .register-container {
   display: flex;
   justify-content: center;
@@ -18,6 +23,7 @@
   padding: 30px;
 }
 
+/* === LEFT SECTION (Logo & Description) === */
 .register-left {
   flex: 1;
   display: flex;
@@ -25,7 +31,6 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
 }
@@ -42,6 +47,7 @@
   font-weight: bold;
 }
 
+/* === RIGHT SECTION (Form) === */
 .register-right {
   flex: 1;
   padding-left: 30px;
@@ -49,7 +55,6 @@
 
 .register-right h2 {
   margin-bottom: 15px;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.75rem;
   font-weight: bold;
   color: #102B22;
@@ -105,4 +110,77 @@
 
 footer {
   margin-top: 50px;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+  .register-form-container {
+    width: 90%;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .register-left {
+    display: none; /* Hide left section on mobile */
+  }
+
+  .register-right {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .register-right h2 {
+    font-size: 1.5rem; /* Adjust heading size */
+  }
+
+  .register-right input {
+    font-size: 0.9rem; /* Adjust font size for input */
+    padding: 10px;
+  }
+
+  .register-right button {
+    font-size: 0.9rem; /* Adjust font size for button */
+    padding: 10px;
+  }
+
+  .register-right p {
+    font-size: 0.9rem; /* Adjust font size for paragraph */
+  }
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .register-form-container {
+    width: 80%;
+  }
+
+  .register-left {
+    font-size: 1.25rem;
+  }
+
+  .register-right {
+    padding-left: 20px;
+  }
+
+  .register-right h2 {
+    font-size: 1.6rem;
+  }
+
+  .register-right input {
+    padding: 10px;
+  }
+
+  .register-right button {
+    padding: 10px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .register-form-container {
+    width: 50%;
+  }
 }

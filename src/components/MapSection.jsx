@@ -6,7 +6,7 @@ import locations from "../dummy/daur_ulang.json";
 export default function MapSection({ id }) {
   console.log(locations);
   return (
-    <section id={id} className="map-section">
+    <section id={id} className="map-section"> {/* Kelas 'map-section' sudah diterapkan di sini */}
       <div className="edu-title-svg">
         <svg
           viewBox="0 0 1200 150"
@@ -30,7 +30,7 @@ export default function MapSection({ id }) {
         </svg>
       </div>
 
-      <div className="map-container">
+      <div className="map-container"> {/* Kelas 'map-container' sudah diterapkan di sini */}
         <div style={{ height: "100%", width: "100%" }}>
           <MapContainer
             center={[-2.5489, 118.0149]}

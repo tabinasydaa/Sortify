@@ -15,7 +15,6 @@ body {
   overflow: hidden;  /* Menyembunyikan scrollbar jika ada konten lebih */
 }
 
-
 /* === RESULT CONTAINER === */
 .result-container {
   display: flex;
@@ -116,4 +115,91 @@ p {
 
 .find-recycling-location:hover {
   background-color: #15302b;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Mobile (max-width: 576px) */
+@media (max-width: 576px) {
+  .result-container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .result-left,
+  .result-right {
+    width: 100%; /* Membuat kedua bagian mengisi layar penuh pada perangkat kecil */
+    text-align: center;
+  }
+
+  .result-left img {
+    max-width: 90%; /* Mengurangi ukuran gambar pada ponsel */
+  }
+
+  .info-box {
+    flex-direction: column; /* Menyusun gambar di atas teks pada ponsel */
+    align-items: center;
+    padding: 10px;
+  }
+
+  .info-box img {
+    width: 60px; /* Ukuran gambar lebih kecil pada perangkat kecil */
+  }
+
+  .yes-no-btn,
+  .find-recycling-location {
+    width: 100%; /* Tombol mengambil lebar penuh pada ponsel */
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem; /* Ukuran font sedikit lebih kecil */
+  }
+}
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .result-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .result-left,
+  .result-right {
+    width: 100%; /* Membuat bagian kiri dan kanan mengisi layar tablet */
+    text-align: center;
+  }
+
+  .info-box {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .info-box img {
+    width: 70px; /* Ukuran gambar sedikit lebih besar pada tablet */
+  }
+
+  .yes-no-btn,
+  .find-recycling-location {
+    width: 100%; /* Tombol lebar penuh pada tablet */
+    padding: 14px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .result-container {
+    padding: 30px;
+  }
+
+  .result-left,
+  .result-right {
+    width: 48%; /* Lebar masing-masing 48% di desktop */
+  }
 }
