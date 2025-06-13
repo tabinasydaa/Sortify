@@ -68,12 +68,12 @@ export default function LoginPage() {
             </div>
 
             <div className="form-group">
-              <input
+              {/* <input
                 type="checkbox"
                 checked={rememberMe}
                 onChange={() => setRememberMe(!rememberMe)}
-              />
-              <label> Remember me</label>
+              /> */}
+              {/* <label> Remember me</label> */}
             </div>
 
             <button type="submit">Login</button>

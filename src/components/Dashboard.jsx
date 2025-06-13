@@ -21,7 +21,7 @@ export default function Dashboard() {
     <section className="dashboard-section">
       <div className="dashboard-container">
         {/* Header */}
-        <h2>Halo, {userName}! 👋</h2>
+        <h2>Halo!!</h2>
         <p>Selamat datang kembali di Sortify.</p>
 
         {/* Ringkasan */}

@@ -1,39 +1,97 @@
-export const categoryData = { 
+export const categoryData = {
   Plastik: { 
     kategori: 'Sampah Plastik', 
     jenis: 'Sampah plastik adalah limbah yang berasal dari bahan polimer sintetis yang sulit terurai secara alami.', 
     jenisImg: 'jenisplastik.png', 
     lamaTerurai: 'Plastik dapat terurai di alam ±10-450 tahun tergantung pada jenis plastiknya.', 
-    lamaTeruraiImg: 'lamaTeruraiPlastik.png', 
+    lamaTeruraiImg: 'teruraiplastik.png', 
     hargaJual: 'Rp 1000 - Rp 2000/kg', 
-    hargaJualImg: 'hargaPlastik.png', 
+    hargaJualImg: 'kisaranplastik.png', 
     fakta: 'Menghemat 16 kali lebih banyak energi listrik dengan mendaur ulang 1 kg plastik dibandingkan memproduksi plastik baru.', 
     faktaImg: 'faktaPlastik.png', 
   },
-  
+
   Kertas: { 
     kategori: 'Sampah Kertas', 
     jenis: 'Sampah kertas berasal dari bahan dasar serat kayu (selulosa) yang sering digunakan dalam kebutuhan sehari-hari.', 
     jenisImg: 'jenisKertas.png', 
     lamaTerurai: 'Kertas dapat terurai di alam ±2-6 minggu tergantung pada jenis kertas.',
-    lamaTeruraiImg: 'teruraikertas.png', 
+    lamaTeruraiImg: 'teruraiplastik.png',
     hargaJual: 'Harga jual kertas bekas tergantung jenis dan kondisi. Perkiraan harga Rp 1.000 - Rp 3.000/kg',
-    hargaJualImg: 'kisaranKertas.png', 
+    hargaJualImg: 'kisaranplastik.png',
     fakta: 'Daur ulang 1 ton kertas bisa menyelamatkan 17 pohon dewasa.', 
     faktaImg: 'faktakertas.png', 
   },
-  
+
   Logam: {
     kategori: 'Sampah Logam',
     jenis: 'Sampah logam adalah limbah dari bahan berbasis logam yang dapat didaur ulang.',
     jenisImg: 'jenisLogam.png',
     lamaTerurai: 'Logam membutuhkan waktu terurai yang sangat lama tergantung pada jenisnya.',
-    lamaTeruraiImg: 'terurailogam.png',
+    lamaTeruraiImg: 'teruraiplastik.png',
     hargaJual: 'Rp 5000 - Rp 10000/kg',
-    hargaJualImg: 'hargaLogam.png',
+    hargaJualImg: 'kisaranplastik.png',
     fakta: 'Logam dapat didaur ulang tanpa kehilangan kualitasnya.',
     faktaImg: 'faktaLogam.png',
   },
 
-  // Tambahkan kategori lainnya sesuai dengan pola yang sama
+  Kardus: {
+    kategori: 'Sampah Kardus',
+    jenis: 'Sampah kardus berasal dari bahan kertas tebal bertekstur, umumnya digunakan untuk pengemasan.',
+    jenisImg: 'jenisKardus.png',
+    lamaTerurai: 'Jika dibuang sembarangan, kardus bisa terurai dalam waktu 2 bulan – 1 tahun tergantung jenis dan bahan.',
+    lamaTeruraiImg: 'teruraiplastik.png',
+    hargaJual: 'Rp 2.000 – Rp 3.000/kg',
+    hargaJualImg: 'kisaranplastik.png',
+    fakta: 'Industri e-commerce menyebabkan konsumsi kardus meningkat hingga 50%.',
+    faktaImg: 'faktaKardus.png',
+  },
+
+  B3: {
+    kategori: 'Sampah B3',
+    jenis: 'Sampah B3 adalah limbah dari benda penyimpan energi listrik yang mengandung logam berat dan bahan kimia beracun.',
+    jenisImg: 'jenisB3.png',
+    lamaTerurai: 'Baterai tidak bisa terurai secara alami dan bisa mencemari tanah, air, dan udara selama bertahun-tahun. Bisa >100 tahun.',
+    lamaTeruraiImg: 'teruraiplastik.png',
+    hargaJual: 'Rp 10.000 – Rp 25.000/kg',
+    hargaJualImg: 'kisaranplastik.png',
+    fakta: '1 baterai AA yang bocor bisa mencemari 600.000 liter air tanah.',
+    faktaImg: 'faktaB3.png',
+  },
+
+  Biologis: {
+    kategori: 'Sampah Biologis',
+    jenis: 'Sampah biologis berasal dari bahan organik seperti sisa makanan, dedaunan, atau kertas tidak dilapisi plastik.',
+    jenisImg: 'jenisBiologis.png',
+    lamaTerurai: '3–4 minggu dalam kondisi yang baik, sampah biologis bisa membusuk, membentuk humus, dan memperbaiki kesuburan tanah.',
+    lamaTeruraiImg: 'teruraiplastik.png',
+    hargaJual: 'Rp 1.500 – Rp 5.000/kg',
+    hargaJualImg: 'kisaranplastik.png',
+    fakta: 'Kompos dari 1 ton sampah bisa menyuburkan tanah seluas 1 m².',
+    faktaImg: 'faktaBiologis.png',
+  },
+
+  Sepatu: {
+    kategori: 'Sampah Sepatu',
+    jenis: 'Sampah sepatu adalah limbah padat dari alas kaki yang sudah tidak layak pakai, umumnya dari kombinasi bahan seperti karet, kulit, kain, busa, dan lem.',
+    jenisImg: 'jenisSepatu.png',
+    lamaTerurai: 'Sepatu sangat sulit terurai karena menggunakan material campuran sintetis yang tahan lama. Berkisar 25 – 100 tahun.',
+    lamaTeruraiImg: 'teruraiplastik.png',
+    hargaJual: 'Sepatu bekas umumnya tidak bernilai tinggi, tapi bisa didaur ulang terbatas atau digunakan kembali (reuse).',
+    hargaJualImg: 'kisaranplastik.png',
+    fakta: 'Beberapa program internasional mengolah sepatu bekas menjadi lantai olahraga.',
+    faktaImg: 'faktaSepatu.png',
+  },
+
+  Kaca: {
+    kategori: 'Sampah Kaca',
+    jenis: 'Sampah kaca berasal dari limbah botol, pecahan kaca, atau material berbahan dasar silika yang tidak mudah terurai secara alami.',
+    jenisImg: 'jenisKaca.png',
+    lamaTerurai: 'Kaca bisa terurai sangat lama (hingga jutaan tahun) jika dibuang sembarangan. Namun, kaca 100% dapat didaur ulang tanpa kehilangan kualitas.',
+    lamaTeruraiImg: 'teruraiplastik.png',
+    hargaJual: 'Rp 1.000 – Rp 2.000/kg',
+    hargaJualImg: 'kisaranplastik.png',
+    fakta: 'Kaca dapat didaur ulang tanpa kehilangan kejernihan atau kekuatannya.',
+    faktaImg: 'faktaKaca.png',
+  },
 };
