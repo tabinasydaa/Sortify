@@ -46,7 +46,7 @@ import benar from "../images/benar.png";
 import salah from "../images/salah.png";                                          
 
 export default function MoreDetailsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("Sekolah");
+  const [selectedCategory, setSelectedCategory] = useState("Dapur");
 
   const tipsData = {
     Sekolah: [
@@ -272,10 +272,9 @@ export default function MoreDetailsPage() {
           fill="#E1FEA4"
           paintOrder="stroke"
         >
-          100 TIPS TO GET ZERO
+          100 TIPS MENCAPAI ZERO-WASTE
         </text>
       </svg>
-
       <p>
         Zero Waste adalah gaya hidup yang bertujuan untuk mengurangi produksi sampah hingga mendekati nol.
       </p>

@@ -1,4 +1,3 @@
-// [Import tetap sama seperti punyamu]
 import './App.css';
 import background from './images/background.png';
 import EducationSection from './components/EducationSection';
@@ -146,6 +145,12 @@ const linkStyle = {
 
 // Halaman Home
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleStartClick = () => {
+    navigate('/login');
+  };
+
   return (
     <>
       <section id="home" className="hero" style={{ backgroundImage: `url(${background})` }}>
@@ -166,7 +171,7 @@ const Home = () => {
             </svg>
           </div>
           <p>Teman cerdas dalam memilah dan mengelola sampah untuk lingkungan yang lebih bersih.</p>
-          <button>Ayo Mulai</button>
+          <button onClick={handleStartClick}>Ayo Mulai</button>
         </div>
       </section>
 
