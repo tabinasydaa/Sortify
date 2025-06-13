@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate untuk mengarahkan setelah login
-import './LoginPage.css'; // Pastikan impor file CSS di sini
+import { useNavigate } from 'react-router-dom';
+import './LoginPage.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -8,35 +8,24 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-  
-  const navigate = useNavigate(); // Inisialisasi navigate
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
     if (email && password) {
-        try {
-            // Kirim data login ke backend
-            const response = await axios.post('http://localhost:5000/login', { email, password });
-            localStorage.setItem('token', response.data.token);  // Simpan token JWT di localStorage
-            navigate('/dashboard');  // Arahkan ke halaman Dashboard setelah login berhasil
-        } catch (error) {
-            alert('Gagal login, cek kembali email dan password!');
-            console.error(error);
-        }
+      try {
+        const response = await axios.post('http://localhost:5000/login', { email, password });
+        localStorage.setItem('token', response.data.token);
+        navigate('/dashboard');
+      } catch (error) {
+        alert('Gagal login, cek kembali email dan password!');
+        console.error(error);
+      }
     } else {
-        alert('Email dan password harus diisi!');
-=======
-    
-    // Logika login (misalnya cek email dan password)
-  if (email && password) {
-    localStorage.setItem('user', JSON.stringify({ email })); // simpan info login
-    navigate('/dashboard');
-  }else {
       alert('Email dan password harus diisi!');
->>>>>>> 990dd2a (dashboard)
     }
-};
+  };
 
   return (
     <div className="login-container">
@@ -45,7 +34,9 @@ export default function LoginPage() {
         <div className="login-left">
           <div className="logo-text">
             <img src="/logo.png" alt="Sortify Logo" width="60" />
-            <p className="logo-description">Bersama Sortify, kenali dan kelola sampah lebih cerdas!</p>
+            <p className="logo-description">
+              Bersama Sortify, kenali dan kelola sampah lebih cerdas!
+            </p>
           </div>
         </div>
 
@@ -55,38 +46,40 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Email :</label>
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
 
             <div className="form-group">
               <label>Password :</label>
-              <input 
-                type="password" 
-                placeholder="Enter your password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
+              <input
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
 
             <div className="form-group">
-              <input 
-                type="checkbox" 
-                checked={rememberMe} 
-                onChange={() => setRememberMe(!rememberMe)} 
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={() => setRememberMe(!rememberMe)}
               />
               <label> Remember me</label>
             </div>
 
             <button type="submit">Login</button>
           </form>
-          <p>Belum punya akun? <Link to="/register">Daftar</Link></p>
+          <p>
+            Belum punya akun? <Link to="/register">Daftar</Link>
+          </p>
         </div>
       </div>
     </div>
